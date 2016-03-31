@@ -1,0 +1,809 @@
+﻿Misc_MyPow[medium]
+return (int)(Math.pow(base, exp));
+
+
+Misc_MyAverage[medium]
+float total = 0;
+for(float n : elems){
+total += n;
+}   
+return total/elems.size();
+
+
+Misc_Concat[medium]
+String total = "[";
+for(String s : that){
+total += s;
+}
+total += "]";
+return total;
+
+
+Misc_LongestString[medium]
+if (that.size() < 1) {throw new java.util.NoSuchElementException();}
+String longest = "";
+for (String s: that) {
+if (s.length() > longest.length())
+longest = s;
+} return longest;
+
+
+Misc_UseFindMax1[medium]
+that.remove(findMax(that));
+
+
+Misc_UseFindMax2[medium]
+List<Float> temp = new ArrayList<Float>(that);
+Float f = findMax(temp);
+temp.remove(f);
+return temp;
+
+
+OR
+
+
+List<Float> clone = new ArrayList<Float>(that.size());
+for(Float f : that){
+  clone.add(f);
+}
+clone.remove(findMax(clone));
+return clone;
+
+
+Misc_IntegerList[easy]
+elems.add(50);
+elems.add(70);
+
+
+Misc_SingleKeyword[medium]
+private
+
+
+Exceptions_Person1[medium]
+class Person{
+ String name = "";
+ int age = 0;
+ public Person(String name, int age){
+  this.name = name;
+  this.age = age;
+ }
+ 
+ public String toString(){
+  return name + ":" + age;
+ }
+}
+
+
+Exceptions_Person2[medium]
+//Person 2 simply adds in “throw new IllegalArguementException” so the assert //method can catch this.
+
+
+class Person{
+ private String name = "";
+ private int age = 0;
+ public Person(String name, int age){
+  if(name.length() < 1 || age < 1) throw new IllegalArgumentException();
+  this.name = name;
+  this.age = age;
+ }
+ 
+ public String toString(){
+  return name + ":" + age;
+ }
+}
+
+
+Exceptions_GoodToKnow[hard]
+finally{
+return 0;
+}
+
+
+Exceptions_Declaring1[easy]
+java.lang.RuntimeException
+
+
+Exceptions_Declaring2[easy]
+//checks array lengths are equal to assert statements, otherwise throws //exception.
+throws EmptyArrayException
+
+
+Exceptions_Declaring3[medium]
+enter nothing into the field, press send
+
+
+Exceptions_AfterTry[medium]
+catch(Exception e){
+  System.out.println("Code not reachable");
+}
+
+
+Exceptions_MakeADifference[medium]
+return 3;
+
+
+Equality / Contracts_BeDifferent[hard]
+"" + Math.random()
+
+
+Equality / Contracts_Time1[medium]
+Time24 add1Hour() {
+int newHours = hours;
+if (newHours < 23) {
+newHours +=1;
+} else {
+newHours = 0;
+}
+return new Time24(seconds, minutes, newHours);
+}
+
+
+Equality / Contracts_Time2[hard]
+Time24 add1Hour() {
+int newHours = hours;
+if (newHours < 23) {
+newHours +=1;
+} else {
+newHours = 0;
+}
+return new Time24(seconds, minutes, newHours);
+}
+
+
+Time24 remove1Hour() {
+int newHours = hours;
+if (newHours > 0) {
+newHours -= 1;
+} else {
+newHours = 23;
+}
+return new Time24(seconds, minutes, newHours);
+}
+
+
+Equality / Contracts_Time3[hard]
+Time24 add1Hour() {
+int newHours = hours;
+if (newHours < 23) {
+newHours +=1;
+} else {
+newHours = 0;
+}
+return new Time24(seconds, minutes, newHours);
+}
+
+
+Time24 remove1Hour() {
+int newHours = hours;
+if (newHours > 0) {
+newHours -= 1;
+} else {
+newHours = 23;
+}
+return new Time24(seconds, minutes, newHours);
+}
+
+
+Time24 add1Minute() {
+int newHours = hours;
+int newMinutes = minutes;
+if (newMinutes < 59) {
+newMinutes += 1;
+} else {
+Time24 add1Hour() {
+int newHours = hours;
+if (newHours < 23) {
+newHours +=1;
+} else {
+newHours = 0;
+}
+return new Time24(seconds, minutes, newHours);
+}
+
+Time24 remove1Hour() {
+int newHours = hours;
+if (newHours > 0) {
+newHours -= 1;
+} else {
+newHours = 23;
+}
+return new Time24(seconds, minutes, newHours);
+}
+
+
+Equality / Contracts_Time4[hard]
+
+
+Time24 add1Hour() {
+int newHours = hours;
+if (newHours < 23) {
+newHours +=1;
+} else {
+newHours = 0;
+}
+return new Time24(seconds, minutes, newHours);
+}
+
+
+Time24 remove1Hour() {
+int newHours = hours;
+if (newHours > 0) {
+newHours -= 1;
+} else {
+newHours = 23;
+}
+return new Time24(seconds, minutes, newHours);
+}
+
+
+Time24 add1Minute() {
+int newHours = hours;
+int newMinutes = minutes;
+if (newMinutes < 59) {
+newMinutes += 1;
+} else {
+newMinutes = 0;
+if (newHours < 23) {
+newHours +=1;
+} else {
+newHours = 0;
+}
+}
+return new Time24(seconds, newMinutes, newHours);
+}
+
+
+Time24 remove1Minute() {
+int newHours = hours;
+int newMinutes = minutes;
+if (newMinutes > 0) {
+newMinutes -= 1;
+} else {
+newMinutes = 59;
+if (newHours > 0) {
+newHours -= 1;
+} else {
+newHours = 23;
+}
+}
+return new Time24(seconds, newMinutes, newHours);
+}
+
+
+Time24 add1Second() {
+int newHours = hours;
+int newMinutes = minutes;
+int newSeconds = seconds;
+if (newSeconds < 59) {
+newSeconds +=1;
+} else {
+newSeconds = 0;
+if (newMinutes < 59) {
+newMinutes += 1;
+} else {
+newMinutes = 0;
+if (newHours < 23) {
+newHours +=1;
+} else {
+newHours = 0;
+}
+}
+}
+return new Time24(newSeconds, newMinutes, newHours);
+}
+
+
+Time24 remove1Second() {
+int newSeconds = seconds;
+int newHours = hours;
+int newMinutes = minutes;
+if (newSeconds > 0) {
+newSeconds -= 1;
+} else {
+newSeconds = 59;
+if (newMinutes > 0) {
+newMinutes -= 1;
+} else {
+newMinutes = 59;
+if (newHours > 0) {
+newHours -= 1;
+} else {
+newHours = 23;
+}
+}
+}
+return new Time24(newSeconds, newMinutes, newHours);
+}
+
+
+Equality / Contracts_Time5[hard]
+
+
+Time12 add1Hour() {
+int newHours = hours;
+boolean newIsPM = isPm;
+if (newHours < 12) {
+newHours +=1;
+} else {
+newHours = 1;
+newIsPM = !newIsPM;
+}
+return new Time12(seconds, minutes, newHours, newIsPM);
+}
+
+
+Time12 remove1Hour() {
+int newHours = hours;
+boolean newIsPM = isPm;
+if (newHours > 1) {
+newHours -= 1;
+} else {
+newHours = 12;
+newIsPM = !newIsPM;
+}
+return new Time12(seconds, minutes, newHours, newIsPM);
+}
+
+
+Time12 add1Minute() {
+int newHours = hours;
+int newMinutes = minutes;
+boolean newIsPM = isPm;
+if (newMinutes < 59) {
+newMinutes += 1;
+} else {
+newMinutes = 0;
+if (newHours < 12) {
+newHours +=1;
+} else {
+newHours = 1;
+newIsPM = !newIsPM;
+}
+}
+return new Time12(seconds, newMinutes, newHours, newIsPM);
+}
+
+
+Time12 remove1Minute() {
+int newHours = hours;
+int newMinutes = minutes;
+boolean newIsPM = isPm;
+if (newMinutes > 0) {
+newMinutes -= 1;
+} else {
+newMinutes = 59;
+if (newHours > 1) {
+newHours -= 1;
+} else {
+newHours = 12;
+newIsPM = !newIsPM;
+}
+}
+return new Time12(seconds, newMinutes, newHours, newIsPM);
+}
+
+
+Time12 add1Second() {
+int newHours = hours;
+int newMinutes = minutes;
+int newSeconds = seconds;
+boolean newIsPM = isPm;
+if (newSeconds < 59) {
+newSeconds +=1;
+} else {
+newSeconds = 0;
+if (newMinutes < 59) {
+newMinutes += 1;
+} else {
+newMinutes = 0;
+if (newHours < 12) {
+newHours +=1;
+} else {
+newHours = 1;
+newIsPM = !newIsPM;
+}
+}
+}
+return new Time12(newSeconds, newMinutes, newHours, newIsPM);
+}
+
+
+Time12 remove1Second() {
+int newSeconds = seconds;
+int newHours = hours;
+int newMinutes = minutes;
+boolean newIsPM = isPm;
+if (newSeconds > 0) {
+newSeconds -= 1;
+} else {
+newSeconds = 59;
+if (newMinutes > 0) {
+newMinutes -= 1;
+} else {
+newMinutes = 59;
+if (newHours > 1) {
+newHours -= 1;
+} else {
+newHours = 12;
+newIsPM = !newIsPM;
+}
+}
+}
+return new Time12(newSeconds, newMinutes, newHours, newIsPM);
+}
+
+
+Equality / Contracts_Boolean1[easy]
+true
+
+
+Equality / Contracts_Boolean2[easy]
+false
+
+
+Equality / Contracts_Boolean3[easy]
+false
+
+
+Equality / Contracts_Boolean4[easy]
+false
+
+
+Equality / Contracts_Equals1[medium]
+
+
+public boolean equals(Point p2){
+ return((this.x == p2.x) && (this.y == p2.y));
+}
+
+
+Equality / Contracts_Equals2[medium]
+
+
+
+
+public boolean equals(Point p2){
+ return((this.x == p2.x) && (this.y == p2.y));
+}
+
+
+
+
+Equality / Contracts_Equals3[medium]
+public boolean equals(Point p2){
+ return((this.x == p2.x) && (this.y == p2.y));
+}
+Puzzlers_SqlInjection[hard]
+".substring(3)+"Foo
+
+
+Puzzlers_PlusFour[medium]
+(foo+=4)
+
+
+Puzzlers_IsThisPossible?[hard]
+null
+Puzzlers_Range1[easy]
+int i = Integer.MAX_VALUE;
+
+
+
+
+Puzzlers_RangeBlocked[hard]
+
+
+int ONE = "X".length();
+int i = ONE;
+while (i < i + ONE) {
+   i = i + ONE;
+}
+
+
+Generics_Generic1[easy]
+T
+
+
+Generics_Generic2[easy]
+extends
+
+
+Generics_Generic3[easy]
+<S,T>
+
+
+Generics_Generic4[hard]
+extends String
+
+
+Generics_Generic5[hard]
+<T extends String>
+
+
+Generics_Generic6[easy]
+& Father
+
+
+Generics_Generic7[medium]
+Object
+
+
+Generics_Generic8[hard]
+super
+
+
+Generics_TemplateMethod1[hard]
+if (e1 < e2){
+return e1;
+}
+else {
+return e2;
+}
+
+
+Generics_TemplateMethod2[hard]
+Student better(Student e1, Student e2) {
+if (e1.height > e2.height) { return e1; } else {return e2; }
+}
+
+
+Generics_TemplateMethod3[hard]
+
+
+//rjp
+Student better(Student e1, Student e2){
+            if (e1.name.compareTo(e2.name) > 0)
+                return e1;
+            return e2;
+}
+Generics_TemplateMethod4[hard]
+
+
+//rjp
+class B extends A<Student>{
+        Student better(Student e1, Student e2){
+            if (e1.averageMark > e2.averageMark)
+                return e1;
+            return e2;
+        }
+}
+
+
+Generics_TemplateMethod5[hard]
+//rjp -- code below dashed lines is correct but is lacking code in red
+class Person{
+        final String name; final String address; 
+        Person(String name, String address){
+            this.name=name;this.address=address;}
+
+
+        public String toString(){
+            return "S("+name+","+address;}
+}
+
+
+class B extends A<Person>{
+        Person better(Person e1, Person e2){
+            if (e1.address.length() < e2.address.length())
+                return e1;
+            return e2;
+        }
+}
+---------------------------
+
+
+//ERROR: Can’t find class Person?
+class B extends A<Person> {
+  Person better (Person e1, Person e2) {
+  if (e1.address.length() > e2.address.length()) {
+    return e1; } else { return e2; }
+  }
+}
+
+
+Generics_TemplateMethod6[hard]
+class B extends A<Student> {
+int target;
+B(int target) {
+this.target = target;
+}
+Student better(Student e1, Student e2) {
+if (difference(e1.averageMark) < difference(e2.averageMark)) {
+return e1;
+} return e2;
+}
+int difference (float mark) {
+return (int)Math.abs(mark-target);
+}
+}
+Generics_PointVsColPoint[medium]
+//rjp -- adapted from code below dashed lines (code below lines has wrong //spelling)
+static ColPoint min (Point one, Point Two) {
+            return (ColPoint)one;
+        }
+--------
+
+
+//ERROR: Can’t find class Colpoint?
+static Colpoint min (Point one, Point Two) {
+return one;
+}
+
+
+Generics_ApplicableMethod[hard]
+(List<? extends Object> list) {
+String output = "";
+for (Object item: list) {
+output += item.toString();
+}
+return output;
+}
+
+
+Generics_Maps1[medium]
+//rjp -- modified from code below dashed lines: if empty condition, return //exception instead of null
+if (that.isEmpty()) throw new java.util.NoSuchElementException();
+            String mostPopulated = "";
+            int maxPopulation = 0;
+            for (String city: that.keySet()) {
+                if (that.get(city) < 1) {continue;} else if (that.get(city) > maxPopulation) {
+                    mostPopulated = city;
+                    maxPopulation = that.get(city);
+                }
+            }
+            return mostPopulated;
+----------
+
+
+//Assertion error, still can’t find why
+if (that.isEmpty()) return null;
+String mostPopulated = "";
+int maxPopulation = 0;
+for (String city: that.keySet()) {
+if (that.get(city) < 1) {continue;} else if (that.get(city) > maxPopulation) {
+mostPopulated = city;
+maxPopulation = that.get(city);
+}
+}
+return mostPopulated;
+
+
+Generics_Maps2[medium]
+
+
+List<String> out = new ArrayList<String>();
+while (that.size() > 0) {
+      String mostPopulated = findMostPopulated(that);
+      out.add(mostPopulated );
+      that.remove(mostPopulated );
+}
+return out;
+
+
+
+
+Generics_CompleteThisCode1[hard]
+
+
+        class CustomList<T extends Object>{
+        private Object[] data = new Object[100];
+        private int size = 0;
+        private int lastIndex = -1;
+        
+        public void add(T item){
+                data[size] = item;
+                size++;
+                lastIndex++;
+        }
+        
+        public boolean isEmpty(){
+                return size == 0;
+        }
+        
+@SuppressWarnings("unchecked")
+        public T first(){
+                return (T)data[0];
+        }
+        @SuppressWarnings("unchecked")
+        public T last(){
+                return (T)data[lastIndex];
+        }
+
+
+        public boolean popLast(){
+                if(size == 0 || data[lastIndex] == null){
+                        return false;
+                }
+                data[lastIndex] = null;
+                size--;
+                lastIndex--;
+                return true;
+        }
+}
+
+
+
+
+Inner/Anon/Reflection instance1[easy]
+new A();
+
+
+Inner/Anon/Reflection_Instance2[medium]
+//rjp
+new A(){
+  int m(){
+        return 2;
+  }
+}
+
+
+Inner/Anon/Reflection_NestedSyntax1[easy]
+new A.C(new A.B())
+
+
+Inner/Anon/Reflection_NestedSyntax2[easy]
+new A.B.C(new A.B())
+
+
+Inner/Anon/Reflection_NestedSyntax3[medium]
+//rjp
+new A.C(null)
+
+
+Inner/Anon/Reflection_NestedSyntax4[hard]
+//rjp
+(new A()).new C() 
+
+
+Inner/Anon/Reflection_NestedSyntax5[hard]
+
+
+A.this
+
+
+Inner/Anon/Reflection_Collections.sort[medium]
+
+
+Specifying an optional comparator will make Collections.sort() to sort by a different ordering other than natural ordering. From the output, you need to compare by x, then y.
+
+
+new Comparator(){
+            public int compare(Object o1, Object o2){
+                    Point p1 = (Point) o1;
+                    Point p2 = (Point) o2;
+                    if(p1.x == p2.x){
+                            return p1.y - p2.y;
+                    }
+                        return p1.x - p2.x;
+            }
+    }
+
+
+
+
+Inner/Anon/Reflection_ArrayUtil.format1[medium]
+
+
+This is a formatting class. You need to specify the start string, end string, and what will separate the output values in the array.
+ 
+"[", "]",", "
+
+
+Inner/Anon/Reflection_ArrayUtil.format2[medium]
+
+
+Just need to specify that it’s a new ArrayUtil, and you also need to change the separator field to be the right one on the same line.
+
+
+new ArrayUtil(); u.separator = "; "
+
+
+Inner/Anon/Reflection_ArrayUtil.format3[hard]
+
+
+http://www.programcreek.com/2011/10/java-class-instance-initializers/
+
+
+This is an example of an “instance initialiser” in java. 
+
+
+{separator="; ";}
