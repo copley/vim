@@ -1,18 +1,29 @@
+call pathogen#infect()
+syntax enable
+
+filetype plugin indent on
+"=====================[color settings below]=======
+"set background=light
+set background=dark
+colorscheme solarized
+
+let g:solarized_termcolors=256
+set t_Co=256
+"highlight column numbers background black
+highlight LineNr ctermbg=black
+"highlight column nubers white 
+highlight LineNr ctermfg=darkgrey
+"=====================[color settings below]=======
+
+
+
 "========================[Vundle Set up Requirements]====================
 set nocompatible
-filetype off
+"filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 "=======================[Vundle set up above]============================
 
-
-"sets clearer colour in terminal
-set t_Co=256
-"allow syntax highlighting
-syntax on
-
-
-"change number colour
-highlight LineNr ctermfg=grey
+"highlight LineNr ctermfg=grey
 set number
 "set mouse to allow clicking in NERDTree
 set mouse=a
@@ -83,14 +94,14 @@ set list
 "=====[ Highlight the match in red ]=============
 " for /"someword"
 function! HLNext (blinktime)
-  let [bufnum, lnum, col, off] = getpos('.')
-  let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-  let target_pat = '\c\%#'.@/
-  let ring = matchadd('WhiteOnRed', target_pat, 101)
-  redraw
-  exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-  call matchdelete(ring)
-  redraw
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#'.@/
+    let ring = matchadd('WhiteOnRed', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 3000) . 'm'
+    call matchdelete(ring)
+    redraw
 endfunction
 
 
@@ -98,3 +109,5 @@ endfunction
 
 "xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"   #this will make Esc to act as Caps Lock
 "xmodmap -e "keycode 66 = Escape NoSymbol Escape"        #this will make Caps Lock to act as Esc
+"=======[Ruler setting]
+set ruler
