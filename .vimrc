@@ -13,6 +13,8 @@ set t_Co=256
 highlight LineNr ctermbg=black
 "highlight column nubers white 
 highlight LineNr ctermfg=darkgrey
+
+set cursorline          " highlight current line
 "=====================[color settings below]=======
 
 
@@ -90,16 +92,20 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
+"=====[ Highlight matches when jumping to next ]=============
+nnoremap <silent> n n:call HLNext(0.4)<cr>
+nnoremap <silent> N N:call HLNext(0.4)<cr>
 
-"=====[ Highlight the match in red ]=============
-" for /"someword"
+"then Highlight the match in red
+
+" for /"someword" -- COMMENT HERE LEAVE
 function! HLNext (blinktime)
     let [bufnum, lnum, col, off] = getpos('.')
     let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
     let target_pat = '\c\%#'.@/
     let ring = matchadd('WhiteOnRed', target_pat, 101)
     redraw
-    exec 'sleep ' . float2nr(a:blinktime * 3000) . 'm'
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
     call matchdelete(ring)
     redraw
 endfunction
@@ -109,5 +115,9 @@ endfunction
 
 "xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"   #this will make Esc to act as Caps Lock
 "xmodmap -e "keycode 66 = Escape NoSymbol Escape"        #this will make Caps Lock to act as Esc
-"=======[Ruler setting]
+"=======[Ruler setting]====================
 set ruler
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
