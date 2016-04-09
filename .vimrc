@@ -1,31 +1,55 @@
+"========================[Vundle Set up Requirements]====================
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+"=======================[Vundle set up above]============================
+
+
+"sets clearer colour in terminal
 set t_Co=256
+"allow syntax highlighting
 syntax on
 
-set background=dark
+
+"change number colour
+highlight LineNr ctermfg=grey
 set number
+"set mouse to allow clicking in NERDTree
+set mouse=a
+"pathogen method below required for YCM package
+execute pathogen#infect()
+
+"===========================[Syntastic]==========
+"https://github.com/scrooloose/syntastic"
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"===========================[Syntastic]==========
 
 
-
+"======================[For Vundle package manager]==========
 call vundle#begin()
+"tern_for_vim -  an additional package for YCM
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'L9'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
+
 call vundle#end()
 
-
-let ycm_add_preview_to_completeopt=0
-let g:ycm_confirm_extra_conf=0
+"==============[YCM config methods]=================
+let ycm_add_preview_to_completeopt=1
+let g:ycm_confirm_extra_conf=1
 set completeopt-=preview
 
+
+"============[Indents with 4 spaces for Tabs]========
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
