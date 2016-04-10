@@ -15,13 +15,12 @@ highlight LineNr ctermbg=black
 highlight LineNr ctermfg=darkgrey
 
 set cursorline          " highlight current line
-"=====================[color settings below]=======
+"=====================[color settings Above]=======
 
 
 
 "========================[Vundle Set up Requirements]====================
 set nocompatible
-"filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 "=======================[Vundle set up above]============================
 
@@ -53,7 +52,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
-
+Plugin 'vim-latex/vim-latex'
 call vundle#end()
 
 "==============[YCM config methods]=================
@@ -121,3 +120,54 @@ set ruler
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+
+
+
+
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+
+" this is mostly a matter of taste. but LaTeX looks good with just a bit
+" of indentation.
+set sw=2
+" TIP: if you write your \label's as \label{fig:something}, then if you
+" type in \ref{fig: and press <C-n> you will automatically cycle through
+" all the figure labels. Very useful!
+set iskeyword+=:
+
+
+"set g:Tex_CompileRule <fmt> =". . ." 
+"set compilation rule (fmt is dvi, pdf, etc.)
+let g:Tex_FormatDependency_pdf = "dvi,pdf"
+"define dependency
+let g:Tex_MultipleCompileFormats = "dvi"
+"generate dvi target in multiple passes (intelligently)
+"let TCLevel 3
+"ignore warnings matching first 3 patterns in
+"let g:Tex_IgnoredWarnings
+"set TCLevel strict
+"display all errors and warnings
+let g:Tex_DefaultTargetFormat = "pdf"
+"set default target to pdf
+let g:Tex_ViewRule_dvi = "xdvi" 
+"set dvi viewer
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats='pdf, aux'
