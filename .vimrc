@@ -171,3 +171,6 @@ let g:Tex_ViewRule_dvi = "xdvi"
 "set dvi viewer
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
+"================[remap caps]======================
+au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
