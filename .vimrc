@@ -171,6 +171,16 @@ let g:Tex_ViewRule_dvi = "xdvi"
 "set dvi viewer
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
-"================[remap caps]======================
-au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
+"=========================[Turn off arrow keys, only use h,j,k,l]========
+noremap <Up> <NOP>      " turn of arrows in normal mode 
+noremap <Down> <NOP>    " turn of arrows in normal mode 
+noremap <Left> <NOP>    " turn of arrows in normal mode 
+noremap <Right> <NOP>   " turn of arrows in normal mode 
+
+
+imap <up> <nop>     " turn of arrows in insert mode 
+imap <down> <nop>   " turn of arrows in insert mode
+imap <left> <nop>   " turn of arrows in insert mode
+imap <right> <nop>  " turn of arrows in insert mode
+"=========================[Turn off arrow keys, only use h,j,k,l]========
