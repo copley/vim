@@ -1,24 +1,33 @@
 call pathogen#infect()
-syntax enable
+"syntax enable
 
-filetype plugin indent on
+"filetype plugin indent on
+
 "=====================[color settings below]=======
 "set background=light
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme default 
 
 let g:solarized_termcolors=256
 set t_Co=256
 "highlight column numbers background black
-highlight LineNr ctermbg=black
+"highlight LineNr ctermbg=black
 "highlight column nubers white 
-highlight LineNr ctermfg=darkgrey
+"highlight LineNr ctermfg=darkgrey
 
-set cursorline          " highlight current line
+"set cursorline          " highlight current line
 "=====================[color settings Above]=======
 
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 "========================[Vundle Set up Requirements]====================
 set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -53,7 +62,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-latex/vim-latex'
+Plugin 'vim-auto-save'
+Plugin 'vim-unimpaired'
 call vundle#end()
+
 
 "==============[YCM config methods]=================
 let ycm_add_preview_to_completeopt=1
@@ -120,12 +132,15 @@ set ruler
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+"=================[vim-auto-save]===========
 
+let g:auto_save = 1 "enables auto save"
 
-
+let g:auto_save_silent = 0  " do not display the auto-save notification
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
+"=================[vim-auto-save]===========
 
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
@@ -171,16 +186,3 @@ let g:Tex_ViewRule_dvi = "xdvi"
 "set dvi viewer
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
-
-"=========================[Turn off arrow keys, only use h,j,k,l]========
-noremap <Up> <NOP>      " turn of arrows in normal mode 
-noremap <Down> <NOP>    " turn of arrows in normal mode 
-noremap <Left> <NOP>    " turn of arrows in normal mode 
-noremap <Right> <NOP>   " turn of arrows in normal mode 
-
-
-imap <up> <nop>     " turn of arrows in insert mode 
-imap <down> <nop>   " turn of arrows in insert mode
-imap <left> <nop>   " turn of arrows in insert mode
-imap <right> <nop>  " turn of arrows in insert mode
-"=========================[Turn off arrow keys, only use h,j,k,l]========
