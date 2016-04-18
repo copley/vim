@@ -1,6 +1,8 @@
 call pathogen#infect()
-"syntax enable
-
+syntax enable
+set iskeyword+=:
+let maplocalleader=","
+let mapleader=","
 "filetype plugin indent on
 
 "=====================[color settings below]=======
@@ -14,8 +16,6 @@ set t_Co=256
 "highlight LineNr ctermbg=black
 "highlight column nubers white 
 "highlight LineNr ctermfg=darkgrey
-
-"set cursorline          " highlight current line
 "=====================[color settings Above]=======
 
 noremap <Up> <NOP>
@@ -28,6 +28,13 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
+map <Esc><Esc> :w<CR>
+"for mapping keys to behve better on text wrap
+nnoremap k gk
+nnoremap j gj
+nnoremap gk k
+nnoremap gj j
 "========================[Vundle Set up Requirements]====================
 set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -60,17 +67,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-latex/vim-latex'
 Plugin 'vim-auto-save'
 Plugin 'vim-unimpaired'
+Plugin 'lervag/vimtex'
 call vundle#end()
 
-
-"==============[YCM config methods]=================
-let ycm_add_preview_to_completeopt=1
-let g:ycm_confirm_extra_conf=1
-set completeopt-=preview
 
 
 "============[Indents with 4 spaces for Tabs]========
@@ -97,33 +99,29 @@ call matchadd('ColorColumn', '\%81v', 100)
 "highlight ColorColumn ctermbg=red ctermfg=blue
 "exec 'set colorcolumn=' . join(range(2,80,3), ',')
 
-
-
 "====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
-
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 "=====[ Highlight matches when jumping to next ]=============
+"Maps 'n' key to jump to the next match during search
 nnoremap <silent> n n:call HLNext(0.4)<cr>
 nnoremap <silent> N N:call HLNext(0.4)<cr>
-
+"// Highlight method below not working.
 "then Highlight the match in red
-
 " for /"someword" -- COMMENT HERE LEAVE
-function! HLNext (blinktime)
-    let [bufnum, lnum, col, off] = getpos('.')
-    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-    let target_pat = '\c\%#'.@/
-    let ring = matchadd('WhiteOnRed', target_pat, 101)
-    redraw
-    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-    call matchdelete(ring)
-    redraw
-endfunction
+"function! HLNext (blinktime)
+"    let [bufnum, lnum, col, off] = getpos('.')
+"    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+"    let target_pat = '\c\%#'.@/
+"    let ring = matchadd('WhiteOnRed', target_pat, 101)
+"    redraw
+"    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+"    call matchdelete(ring)
+"    redraw
+"endfunction
 
 
 "=====[ Remapping CAPS terminal command ]================
-
 "xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"   #this will make Esc to act as Caps Lock
 "xmodmap -e "keycode 66 = Escape NoSymbol Escape"        #this will make Caps Lock to act as Esc
 "=======[Ruler setting]====================
@@ -131,13 +129,9 @@ set ruler
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-
 "=================[vim-auto-save]===========
-
-let g:auto_save = 1 "enables auto save"
-
+let g:auto_save = 0 "enables auto save set to 1"
 let g:auto_save_silent = 0  " do not display the auto-save notification
-
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 "=================[vim-auto-save]===========
@@ -186,3 +180,13 @@ let g:Tex_ViewRule_dvi = "xdvi"
 "set dvi viewer
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
+let g:vimtex_fold_enabled = 0
+let g:vimtex_quickfix_mode = 2
+let g:vimtex_quickfix_open_on_warning = 1
+let g:vimtex_toc_resize = 0
+let g:vimtex_toc_hide_help = 1
+let g:vimtex_indent_enabled = 1
+let g:vimtex_latexmk_enabled = 1
+let g:vimtex_latexmk_callback = 0
+let g:vimtex_complete_recursive_bib = 0
+set clipboard=unnamedplus "allows for normal Copy/Paste like Windows & Linux"
