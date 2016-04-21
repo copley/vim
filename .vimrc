@@ -56,10 +56,12 @@
 "=============================================================================[]
 "=============================================================================[]
 "=============================================================================[]
-
-
-
-
+"                       ____ ____ ____ ____ ____ ____
+"                      ||. |||v |||i |||m |||r |||c ||
+"                      ||__|||__|||__|||__|||__|||__||
+"                      |/__\|/__\|/__\|/__\|/__\|/__\|
+"
+"
 "__________________________________________________________________Pathogen init
 call pathogen#infect()
 syntax enable
@@ -69,9 +71,20 @@ let mapleader=","
 filetype plugin indent on "Allows plugin indentation"
 filetype plugin on " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 set showcmd " show command in bottom bar"
-"[Color Settings]
+"__________________________________________________________________Color Settings
+"Color Options > lightning, solarized(dark, light), xterm16
+
 let g:solarized_termcolors=256
 set t_Co=256
+set background=light
+
+colorscheme lightning
+
+" Select colormap: 'soft', 'softlight', 'standard' or 'allblue'
+let xterm16_colormap    = 'softlight'
+" Select brightness: 'low', 'med', 'high', 'default' or custom levels.
+let xterm16_brightness  = 'high'
+"set lines=37 columns=90 "For default opening on boot"
 "___________________________________________________________________Key Mappings
 
 noremap <Up> <NOP>
@@ -140,6 +153,7 @@ Plugin 'vim-latex/vim-latex'
 Plugin 'vim-auto-save'
 Plugin 'vim-unimpaired'
 Plugin 'lervag/vimtex'
+Plugin 'wimstefan/Lightning'
 call vundle#end()
 "_________________________________________________Make the 81st column stand out
 "   EITHER the entire 81st column, full-screen...
@@ -253,7 +267,3 @@ set clipboard=unnamedplus "allows for normal Copy/Paste like Windows & Linux"
 ""set background=light
 "set background=dark
 "colorscheme default
-
-
-
-
