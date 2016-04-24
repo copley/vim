@@ -1,4 +1,5 @@
-"$ZZ$ZZOOO?~========~~~~~~~~~~~~~~~~~~~~~:~~~~~~~~~~:::::::::::::::::,:====++===
+"_______________________________________________________________________________
+"$ZZ$ZZOOO?~========~~~~~~~~~~~~~~~~~~~~~:~~~~~~~~~~:::::::::::::::::,:====++=+=
 "$$$$$$$ZZI========~~~~~~~~~~~~~~~~~~~~:~:~~~~~~~~~~:::::::::::::::::,:===+++===
 "$$$$$$$$$I======~~~~~~~~~=~~~~~~~~~~~~::~~~~~~~~~:::::::::::::::::::,:===++++++
 "$$$$$$$$$I~~==~~~~~~~~~~~~~=7ZOO$ZOODD8?~~~~~~~~~~~:::::::::::::::::,:+++++++++
@@ -56,13 +57,46 @@
 "=============================================================================[]
 "=============================================================================[]
 "=============================================================================[]
-"                       ____ ____ ____ ____ ____ ____
-"                      ||. |||v |||i |||m |||r |||c ||
-"                      ||__|||__|||__|||__|||__|||__||
-"                      |/__\|/__\|/__\|/__\|/__\|/__\|
-"
-"
-"__________________________________________________________________Pathogen init
+"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+"hhhhs++shhhhyyyyyyyyyyyyyyyyhdmMMMMMMMMMMMMMMMMMMMMMMNmhhhhhhhhhhhhhhhhdddddddd
+"yyhhs++syyyyyyyyyyyyyyyyyyydNMMMMMMMMMMMMMMMMMMMMMMMMMMNdhhhhhhhhhhhhhhhhhddddd
+"yyyyyssyyyyyyyyyyyyyyyyyyhmMMMMMMMMNNmmmNNNMMMMMMMMMMMMMMmhhhhhhhhhhhhhhhdddddd
+"yyyyyyyyyyyyyyyyyyyyyyyyhmNMMMMMMMmdhhhhdddmmNMMMMMMMMMMMMNhhhhhhhhhhhhhhdddddd
+"yyyyyyyyyyyyyyyyyyyyyyyyhNMMNNMNMmhyyyyyhdhdmmNMMMMMMMMMMMMNhyhhhhhhhhhhhhddddd
+"yyyyyyyyyyyyyyyyyyyyyyyhmNMmNNMNMdysyhhyhhhdmmNMMMMMMMMMMMMMNhhhhhhhhhhhhhhdddd
+"yyyyyyyyyyyyyyyyyyyyyyhdmNmdNdNmNdsyyyhyhydmmNNMMMMMMMMMMMMMMmhhhhhhhhhhhhhhddd
+"yyyyysyyyyyyyyyyyyyyyydmNNdmMyNdNdsyyhhhhhhdmmmMMMMMMMMMMMMMMNdhhhhhhhhhhhhhddd
+"yyyyyssyyyyyyyyyyyyyhyhmNmmNNhmhNy+ssyyhhhddddmMMMMMMMMMMMMMMMdhhhhhhhhhhhhdddd
+"yyyysosyyyyyyyyyyyhhhhmNNNMMNmmdNsososssyhhhhhmMMMMMMMMMMMMMMMmyyyyyyyyhhhhhhdd
+"yyyys+oyyyyhhhhhhhhhhdNMNMMMMNsmdosssysysyyyhmNMMMMMMMMMMMMMMMNhyyyyyyyyyyhhhhh
+"yyyhs+syhhhhhhhhhhhhdmNMMMMMMNmNh+ossyyysyhmNMMMMMMMMMMMMMMMMMMdyyyyyyyyyyyhhhh
+"yyhhysyhhhhhhhhhhhhhdNNMMMMMNNMMNdysssosymMMMMMMMMMMMMMMMMMMMMMNhhhhhhhhhhhhhhh
+"hhhhhyhhhhhhhhhhhhhhmNNMMMMMdNNNMNNmdyoydNMMMNNMMMMMMMMMMMMMMMMMmhhhhhhhhhhhhhd
+"hhhhhyhhhhhhhhhhhhhhNmmNMMMMdNMNNmddyhyhdmNNMMMMMMMMMMMMMMMMMMMMMmdddhhhhhhdddd
+"hhhhhyhhhhddddddddhdmddNNNMNdmNmmssyhyydmmmdmmNMMMMMMMMMMMMMMMMMMMmddhhhhhhdddd
+"hhhhyyhhdddddddddhdydddNNNNmmmmdyoshdysdNNNNmmMMMMMMMMMMMMMMMMMMMMMmdhhhhhhhhhd
+"hhdhyyhdddddddddddysdmmmMNNNMNmmyoyhdmmNNNmNNNMMMMMMMMMMMMMMMMMMMMMMmddhhhhhhhh
+"hdddhyhdddddddddddsyNNmNNNMMMMNddhdhddmddmmNNMMMMMMMMMMMMMMMMMMMMMMMMmddddddddd
+"ddddddddddddddddddsmNNmNNNMMMMMNNmmNmmNmmNNMMMMMMMMMMMMMMMMMMMMMMMMMMNmmmmmmmmm
+"ddddddddddddddddddhMNNNNMNMMMMMMNNMNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMmdddmmmmm
+"dddddhddddddddddhdmNmMNNMNMMMMMMNMMNNMNmmmNNMMMMMMMMMMMMMMMMMMMMMMMMMMdhddddmmm
+"ddddhhdddmmmmmdddmdmmMMNNMMMMMMMNNNNNmmdyydmmNNMMMMMMMMMMMMMMMMMMMMMMMhhhhhdddd
+"dddddhdmmmmmmmmmmmmmmNNmNMMMMMMMMmNmmmmmdddmNNMMMMMMMMMMMMMMMMMMMMMMMMyssyyyyhd
+"ddmmdddmmmmmmmmmmmmmmNNNNMMMMMMMMhmdNNNmmNNNNNNNMMMMMMMMMMMMMMMMMMMMMMmdhysssyh
+"mmmmmmmmmmmmmmdddmmNNNNNMMMMMMMMMNddshmNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMNmdhh
+"mmmmmdmmddddddmmmNNNNNMMMMMMMMMMMMNdooshmNMMNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN
+"mmmmddddmmmmmmmNNNNNNNMMMMMMMMMMMMMmsooysydNMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+"mmmmmmmmmmmmNNNNNNNNNMMMMMMMMMMMMMMMdsyhossymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+"NmNNmmmmmNNNNNNNNNNMMMMMMMMMMMMMMMMMNhhhsoosydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+"NNNNNNNNNNNNNNNNNNMMMMMMMMMMMMMMMMMMMNyhhssyhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+"NNNNNNNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMdhdyyhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+"███████████████████████████████████████████████████████████████████████████████
+"__________________________________________________________________█Pathogen init
 call pathogen#infect()
 syntax enable
 set iskeyword+=:
@@ -71,7 +105,7 @@ let mapleader=","
 filetype plugin indent on "Allows plugin indentation"
 filetype plugin on " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 set showcmd " show command in bottom bar"
-"__________________________________________________________________Color Settings
+"__________________________________________________________________█Color Settings
 "Color Options > lightning, solarized(dark, light), xterm16
 
 let g:solarized_termcolors=256
@@ -84,18 +118,24 @@ colorscheme lightning
 let xterm16_colormap    = 'softlight'
 " Select brightness: 'low', 'med', 'high', 'default' or custom levels.
 let xterm16_brightness  = 'high'
-"set lines=37 columns=90 "For default opening on boot"
-"___________________________________________________________________Key Mappings
+"set lines=37 columns=90 "For default opening on boot, not working."
+"___________________________________________________________________█Key Mappings
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+map<F5> :%s/\t/  /g<CR>
+map<F6> :%s/\t/  /g<CR>
+"map<F6> :<C-U>'%s/\t/  /g'<CR>
+"map <F2> :echo 'Current time is ' . strftime('%c')<CR>
+"map!<F6>':%s/\s\+$//'<CR>
+"Now using arrow keys for AutoComplete only
+"imap <up> <nop>
+"imap <down> <nop>
+"imap <left> <nop>
+"imap <right> <nop>
 
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
 "remove page up / page down
 
 imap <PageUp> <nop>
@@ -118,13 +158,13 @@ nnoremap <HOME> <NOP>
 nnoremap <End> <nop>
 nnoremap <End> <NOP>
 
-"________________________________________________________________Indent features
+"________________________________________________________________█Indent features
 set smartindent     "Automatically inserts indentation in some cases
 set cindent         "Like smartindent, but stricter and more customisable
 set tabstop=4 " show existing tab with 4 spaces width
 set shiftwidth=4 " when indenting with '>', use 4 spaces width
 set expandtab " On pressing tab, insert 4 spaces
-"_____________________________________________________Vundle Set up Requirements
+"_____________________________________________________█Vundle Set up Requirements
 set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 set number "highlight LineNr ctermfg=grey
@@ -134,7 +174,7 @@ set mouse=a "set mouse to allow clicking in NERDTree
 execute pathogen#infect()
 filetype plugin on " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 
-"______________________________________________________________________Syntastic
+"______________________________________________________________________█Syntastic
 "https://github.com/scrooloose/syntastic"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -143,7 +183,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-"_____________________________________________________For Vundle package manager
+"_____________________________________________________█For Vundle package manager
 call vundle#begin()
 "tern_for_vim -  an additional package for YCM
 Plugin 'VundleVim/Vundle.vim'
@@ -153,9 +193,20 @@ Plugin 'vim-latex/vim-latex'
 Plugin 'vim-auto-save'
 Plugin 'vim-unimpaired'
 Plugin 'lervag/vimtex'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-rails'
+"Plugin 'ternjs/tern_for_vim'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ggreer/the_silver_searcher'
 Plugin 'wimstefan/Lightning'
 call vundle#end()
-"_________________________________________________Make the 81st column stand out
+"_________________________________________________________█silver_searcher_config
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+
+"_________________________________________________█Make the 81st column stand out
 "   EITHER the entire 81st column, full-screen...
 "highlight ColorColumn ctermbg=magenta
 "set colorcolumn=81
@@ -171,36 +222,17 @@ call matchadd('ColorColumn', '\%81v', 100)
 "________________Make tabs, trailing whitespace, and non-breaking spaces visible
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
-"=====[ Highlight matches when jumping to next ]=============
-"Maps 'n' key to jump to the next match during search
-"nnoremap <silent> n n:call HLNext(0.4)<cr>
-"nnoremap <silent> N N:call HLNext(0.4)<cr>
-"// Highlight method below not working.
-"then Highlight the match in red
-" for /"someword" -- COMMENT HERE LEAVE
-"function! HLNext (blinktime)
-"    let [bufnum, lnum, col, off] = getpos('.')
-"    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-"    let target_pat = '\c\%#'.@/
-"    let ring = matchadd('WhiteOnRed', target_pat, 101)
-"    redraw
-"    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-"    call matchdelete(ring)
-"    redraw
-"endfunction
-
-
-"________________________________________________Remapping CAPS terminal command
+"________________________________________________█Remapping CAPS terminal command
 "xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"  #Esc to act as Caps Lock
 "xmodmap -e "keycode 66 = Escape NoSymbol Escape"       #Caps Lock to act as Esc
 
 set ruler "Ruler setting"
 set backspace=eol,start,indent " Configure backspace so it acts as it should act
 set whichwrap+=<,>,h,l
-"__________________________________________________________________vim-auto-save
+"__________________________________________________________________█vim-auto-save
 let g:auto_save = 0 "enables auto save set to 1"
 let g:auto_save_silent = 0  " do not display the auto-save notification
-"_______________________________________________________________vim-latex config
+"_______________________________________________________________█vim-latex config
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
 set shellslash
@@ -255,7 +287,30 @@ let g:vimtex_latexmk_callback = 0
 let g:vimtex_complete_recursive_bib = 0
 set clipboard=unnamedplus "allows for normal Copy/Paste like Windows & Linux"
 
-"_________________________________________________________________For Trial
+"_____________________________________________________________█AutoComplete_SetUp
+"A combination of CTRL n & CTRL o & CTRL x 
+set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+set omnifunc=csscomplete#CompleteCSS
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+set omnifunc=phpcomplete#CompletePHP
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+
+
+
+
+
+
+
+
+
+"███████████████████████████████████████████████████████████████████████████████
+
+"show hidden characters in Vim
+"_____________________________________________________________________█For Trial
 "highlight column numbers background black
 "highlight LineNr ctermbg=black
 "highlight column nubers white 
@@ -264,6 +319,25 @@ set clipboard=unnamedplus "allows for normal Copy/Paste like Windows & Linux"
 "imap<Insert><nop>
 "map<Del><nop>
 "imap<Del><nop>
-""set background=light
+"set background=light
 "set background=dark
 "colorscheme default
+"________________________________________█Highlight matches when jumping to nextx 
+"Maps 'n' key to jump to the next match during search
+"nnoremap <silent> n n:call HLNext(0.4)<cr>
+"nnoremap <silent> N N:call HLNext(0.4)<cr>
+"// Highlight method below not working.
+"then Highlight the match in red
+" for /"someword" -- COMMENT HERE LEAVE
+"function! HLNext (blinktime)
+"    let [bufnum, lnum, col, off] = getpos('.')
+"    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+"    let target_pat = '\c\%#'.@/
+"    let ring = matchadd('WhiteOnRed', target_pat, 101)
+"    redraw
+"    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+"    call matchdelete(ring)
+"    redraw
+"endfunction
+"let g:ycm_python_binary_path = '/usr/bin/python3'
+
