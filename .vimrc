@@ -1,4 +1,5 @@
 "__________________________________________________________________█Pathogen init
+map <F7> mzgg=G`z
 call pathogen#infect()
 syntax enable
 set iskeyword+=:
@@ -8,12 +9,12 @@ filetype plugin indent on "Allows plugin indentation"
 filetype plugin on " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 set showcmd " show command in bottom bar"
 "__________________________________________________________________█Color Settings
-"Color Options > lightning, solarized(dark, light), xterm16
-
+"Color Options > lightning, solarized(dark, light), xterm16, moria, github,
+"sprinkles, moria
 let g:solarized_termcolors=256
 set t_Co=256
 set background=light
-
+let g:bluedrake_256=1
 colorscheme lightning
 
 " Select colormap: 'soft', 'softlight', 'standard' or 'allblue'
@@ -23,8 +24,11 @@ let xterm16_brightness  = 'high'
 "set lines=37 columns=90 "For default opening on boot, not working."
 "___________________________________________________________________█Key Mappings
 
-"map<F5> :%s/\t/  /g<CR>
-map<F6> :%s/\t/  /g<CR>
+map<F6> :%s/\t/  /g<CR>:w<CR>
+map<F2> :!ruby 
+map<F12> :NERDTree<CR>
+nnoremap j gj "allows easier movement with line wrapping.
+nnoremap k gk "allows easier movement with line wrapping.
 "map<F6> :<C-U>'%s/\t/  /g'<CR> "creates No mapping error.
 "map <F2> :echo 'Current time is ' . strftime('%c')<CR>
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
@@ -37,7 +41,6 @@ imap <PageUp> <nop>
 imap <PageDown> <nop>
 imap <PageUp> <NOP>
 imap <PageDown> <NOP>
-
 imap <HOME> <nop>
 imap <HOME> <NOP>
 imap <End> <nop>
@@ -71,10 +74,10 @@ execute pathogen#infect()
 filetype plugin on " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 
 "______________________________________________________________________█Syntastic
-"https://github.com/scrooloose/syntastic"
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+""https://github.com/scrooloose/syntastic"
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -205,3 +208,4 @@ let g:DVB_TrimWS = 1
 set modifiable "Allows edit of files in buffer where files are stored."
 
 "███████████████████████████████████████████████████████████████████████████████
+
