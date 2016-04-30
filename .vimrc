@@ -1,5 +1,5 @@
 "__________________________________________________________________█Pathogen init
-map <F7> mzgg=G`z
+map <F7> mzgg=G`z "file indentation fix.
 call pathogen#infect()
 syntax enable
 set iskeyword+=:
