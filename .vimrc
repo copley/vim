@@ -16,14 +16,12 @@ set t_Co=256
 set background=light
 let g:bluedrake_256=1
 colorscheme lightning
-
 " Select colormap: 'soft', 'softlight', 'standard' or 'allblue'
 let xterm16_colormap    = 'softlight'
 " Select brightness: 'low', 'med', 'high', 'default' or custom levels.
 let xterm16_brightness  = 'high'
 "set lines=37 columns=90 "For default opening on boot, not working."
 "___________________________________________________________________█Key Mappings
-
 map<F6> :%s/\t/  /g<CR>:w<CR>
 map<F2> :!ruby 
 map<F12> :NERDTree<CR>
@@ -34,9 +32,7 @@ nnoremap k gk "allows easier movement with line wrapping.
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "map!<F6>':%s/\s\+$//'<CR> "creates No mapping error. 
 "Now using arrow keys for AutoComplete only
-
 "remove page up / page down
-
 imap <PageUp> <nop>
 imap <PageDown> <nop>
 imap <PageUp> <NOP>
@@ -45,17 +41,14 @@ imap <HOME> <nop>
 imap <HOME> <NOP>
 imap <End> <nop>
 imap <End> <NOP>
-
 nnoremap <PageUp> <nop>
 nnoremap <PageDown> <nop>
 nnoremap <PageUp> <NOP>
 nnoremap <PageDown> <NOP>
-
 nnoremap <HOME> <nop>
 nnoremap <HOME> <NOP>
 nnoremap <End> <nop>
 nnoremap <End> <NOP>
-
 "________________________________________________________________█Indent features
 set smartindent     "Automatically inserts indentation in some cases
 set cindent         "Like smartindent, but stricter and more customisable
@@ -104,7 +97,6 @@ call vundle#end()
 "_________________________________________________________█silver_searcher_config
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
-
 "_________________________________________________█Make the 81st column stand out
 "   EITHER the entire 81st column, full-screen...
 "highlight ColorColumn ctermbg=magenta
@@ -202,10 +194,8 @@ vmap  <expr>  <RIGHT>  DVB_Drag('right')
 vmap  <expr>  <DOWN>   DVB_Drag('down')
 vmap  <expr>  <UP>     DVB_Drag('up')
 vmap  <expr>  D        DVB_Duplicate()
-" Remove any introduced trailing whitespace after moving
-let g:DVB_TrimWS = 1
+let g:DVB_TrimWS = 1 " Remove any introduced trailing whitespace after moving
 "__________________________________________________________________█NERDTree
 set modifiable "Allows edit of files in buffer where files are stored."
-
 "███████████████████████████████████████████████████████████████████████████████
 
