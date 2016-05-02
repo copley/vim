@@ -49,6 +49,10 @@ nnoremap <HOME> <nop>
 nnoremap <HOME> <NOP>
 nnoremap <End> <nop>
 nnoremap <End> <NOP>
+nnoremap <C-h> <C-w>h "allow moving between splits easier
+nnoremap <C-j> <C-w>j "allow moving between splits easier
+nnoremap <C-k> <C-w>k "allow moving between splits easier
+nnoremap <C-l> <C-w>l "allow moving between splits easier
 "________________________________________________________________█Indent features
 set smartindent     "Automatically inserts indentation in some cases
 set cindent         "Like smartindent, but stricter and more customisable
