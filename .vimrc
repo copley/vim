@@ -1,5 +1,5 @@
 "__________________________________________________________________█Pathogen init
-map <F7> mzgg=G`z ".cshrc is the bash script file"
+map <F7> mzgg=G`z ".cshrc is the bash script file, also file indentation fix
 call pathogen#infect()
 syntax enable
 set iskeyword+=:
@@ -16,27 +16,23 @@ set t_Co=256
 set background=light
 let g:bluedrake_256=1
 colorscheme sprinkles "default "sprinkles "lightning
-
 " Select colormap: 'soft', 'softlight', 'standard' or 'allblue'
 let xterm16_colormap    = 'softlight'
 " Select brightness: 'low', 'med', 'high', 'default' or custom levels.
 let xterm16_brightness  = 'high'
 "set lines=37 columns=90 "For default opening on boot, not working."
 "___________________________________________________________________█Key Mappings
-
 map<F6> :%s/\t/  /g<CR>:w<CR>
 map<F2> :!ruby 
 map<F12> :NERDTree<CR>
-nnoremap j gj
-nnoremap k gk
+nnoremap j gj "allows easier movement with line wrapping.
+nnoremap k gk "allows easier movement with line wrapping.
 "map<F6> :<C-U>'%s/\t/  /g'<CR> "creates No mapping error.
 "map <F2> :echo 'Current time is ' . strftime('%c')<CR>
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "map!<F6>':%s/\s\+$//'<CR> "creates No mapping error. 
 "Now using arrow keys for AutoComplete only
-
 "remove page up / page down
-
 imap <PageUp> <nop>
 imap <PageDown> <nop>
 imap <PageUp> <NOP>
@@ -45,16 +41,18 @@ imap <HOME> <nop>
 imap <HOME> <NOP>
 imap <End> <nop>
 imap <End> <NOP>
-
 nnoremap <PageUp> <nop>
 nnoremap <PageDown> <nop>
 nnoremap <PageUp> <NOP>
 nnoremap <PageDown> <NOP>
-
 nnoremap <HOME> <nop>
 nnoremap <HOME> <NOP>
 nnoremap <End> <nop>
 nnoremap <End> <NOP>
+nnoremap <C-h> <C-w>h "allow moving between splits easier
+nnoremap <C-j> <C-w>j "allow moving between splits easier
+nnoremap <C-k> <C-w>k "allow moving between splits easier
+nnoremap <C-l> <C-w>l "allow moving between splits easier
 "________________________________________________________________█Indent features
 set smartindent     "Automatically inserts indentation in some cases
 set cindent         "Like smartindent, but stricter and more customisable
@@ -65,7 +63,6 @@ set expandtab " On pressing tab, insert 4 spaces
 set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 set number "highlight LineNr ctermfg=grey
-"   set relativenumber
 set mouse=a "set mouse to allow clicking in NERDTree
 "Note: Vim script doesnt allow commenting after the method parenthasis.
 
@@ -74,9 +71,9 @@ filetype plugin on " REQUIRED. This makes vim invoke Latex-Suite when you open a
 
 "______________________________________________________________________█Syntastic
 ""https://github.com/scrooloose/syntastic"
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -104,7 +101,6 @@ call vundle#end()
 "_________________________________________________________█silver_searcher_config
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
-
 "_________________________________________________█Make the 81st column stand out
 "   EITHER the entire 81st column, full-screen...
 "highlight ColorColumn ctermbg=magenta
