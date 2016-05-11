@@ -25,8 +25,7 @@ let xterm16_brightness  = 'high'
 map<F6> :%s/\t/  /g<CR>:w<CR>
 map<F2> :!ruby 
 map<F12> :NERDTree<CR>
-nnoremap j gj "allows easier movement with line wrapping.
-nnoremap k gk "allows easier movement with line wrapping.
+
 "map<F6> :<C-U>'%s/\t/  /g'<CR> "creates No mapping error.
 "map <F2> :echo 'Current time is ' . strftime('%c')<CR>
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
