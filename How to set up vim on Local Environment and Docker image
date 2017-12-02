@@ -1,5 +1,18 @@
+# To be updated...
 Re-edit this file to remove inaccurate history commands.
-  564  vim /root/
+Dump History log of Docker Ubuntu Image via ssh. 
+/root directory in this case should be ~ directory.
+The pathogen path had changed so use the lower link.
+Follow these steps first.
+
+touch ~.vim
+cd .vim
+touch autoload
+touch bundle
+
+#Next follow history commands below. TBC.
+
+564  vim /root/
   565  cd /root/
   566  ls
   567  vim .vimrc
