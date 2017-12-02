@@ -6,17 +6,19 @@ Re-edit this file to remove inaccurate history commands.
   568  vim
   569  cd /
   570  $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  571  git clone https://github.com/VundleVim/Vundle.vim.git ~/root/.vim/bundle/Vundle.vim
+  U571  git clone https://github.com/VundleVim/Vundle.vim.git ~/root/.vim/bundle/Vundle.vim
   572  vim
   573  cd /root/
   574  vim .vimrc 
   575  cd /exabgp
   576  vim dataCreator.py 
-  577  cd /root/.vim
+  U577  cd /root/.vim
   578  ls
-  579  mkdir autoload
+  U579  mkdir autoload
   580  cd autoload/
-  581  git clone https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+  Not Working, 581  git clone https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+Use: mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
   582  vim
   583  nano
   584  apt-get -y install nano
