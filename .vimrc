@@ -1,3 +1,9 @@
+" Load Pathogen
+execute pathogen#infect()
+filetype plugin indent on
+syntax enable
+
+let g:pymode_python = 'python3'
 "__________________________________________________________________█Pathogen init
 map <F7> mzgg=G`z ".cshrc is the bash script file, also file indentation fix
 call pathogen#infect()
@@ -15,7 +21,7 @@ let g:solarized_termcolors=256
 set t_Co=256
 set background=light
 let g:bluedrake_256=1
-colorscheme sprinkles "default "sprinkles "lightning
+colorscheme default "default "sprinkles "lightning
 " Select colormap: 'soft', 'softlight', 'standard' or 'allblue'
 let xterm16_colormap    = 'softlight'
 " Select brightness: 'low', 'med', 'high', 'default' or custom levels.
@@ -25,7 +31,7 @@ let xterm16_brightness  = 'high'
 map<F6> :%s/\t/  /g<CR>:w<CR>
 map<F2> :!ruby 
 map<F12> :NERDTree<CR>
-
+set clipboard=unnamedplus
 "map<F6> :<C-U>'%s/\t/  /g'<CR> "creates No mapping error.
 "map <F2> :echo 'Current time is ' . strftime('%c')<CR>
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
@@ -84,15 +90,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Raimondi/delimitMate'
-Plugin 'vim-latex/vim-latex'
 Plugin 'vim-auto-save'
-Plugin 'vim-unimpaired'
-Plugin 'lervag/vimtex'
+Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rails'
 Plugin 'ternjs/tern_for_vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ggreer/the_silver_searcher'
 Plugin 'wimstefan/Lightning'
