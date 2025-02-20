@@ -4,3 +4,4 @@ ls	dir	List files and folders
 ls -la	dir /a	Show hidden files
 ls -ltr	dir /o-d	Sort by oldest first
 ls -lt	dir /od	Sort by newest first
+cat    ,   type
