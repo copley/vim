@@ -1,0 +1,6 @@
+Summary of ls Equivalents in Windows CMD
+Linux Command	Windows Equivalent (cmd.exe)	Description
+ls	dir	List files and folders
+ls -la	dir /a	Show hidden files
+ls -ltr	dir /o-d	Sort by oldest first
+ls -lt	dir /od	Sort by newest first
