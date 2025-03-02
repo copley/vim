@@ -1,0 +1,258 @@
+--------------------------------------------------------------------------------
+-- init.lua – Neovim configuration converted from your vimscript
+--------------------------------------------------------------------------------
+
+-- Basic options and settings
+vim.opt.nocompatible = true                    -- (for clarity)
+vim.cmd("filetype plugin indent on")
+vim.cmd("syntax enable")
+
+vim.g.pymode_python = "python3"                -- Use python3 for pymode
+
+-- Leader keys and keyword settings
+vim.opt.iskeyword:append(":")
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
+
+vim.opt.showcmd = true                         -- Show command in bottom bar
+
+-- Color settings
+vim.g.solarized_termcolors = 256
+vim.opt.termguicolors = true                   -- Use GUI colors in terminal
+vim.opt.background = "light"
+vim.g.bluedrake_256 = 1
+vim.cmd("colorscheme default")
+vim.g.xterm16_colormap = "softlight"
+vim.g.xterm16_brightness = "high"
+
+--------------------------------------------------------------------------------
+-- Key Mappings
+--------------------------------------------------------------------------------
+local map = vim.keymap.set
+
+-- F7: Fix file indentation
+map("n", "<F7>", "mzgg=G`z", { silent = true })
+
+-- F6: Replace tabs with two spaces and save file
+map("n", "<F6>", ":%s/\\t/  /g<CR>:w<CR>", { silent = true })
+
+-- F2: Run ruby command
+map("n", "<F2>", ":!ruby ", {})
+
+-- F12: Toggle file explorer (using nvim-tree)
+map("n", "<F12>", ":NvimTreeToggle<CR>", { silent = true })
+
+-- F5: Remove trailing whitespace and preserve search register
+map("n", "<F5>", ":let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>", { silent = true })
+
+-- Disable keys in insert and normal modes
+for _, key in ipairs({"<PageUp>", "<PageDown>", "<Home>", "<End>"}) do
+  map("i", key, "<nop>")
+  map("n", key, "<nop>")
+end
+
+-- Movement between splits with Ctrl+h/j/k/l
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-l>", "<C-w>l")
+
+--------------------------------------------------------------------------------
+-- Indentation / Tab settings
+--------------------------------------------------------------------------------
+vim.opt.smartindent = true
+vim.opt.cindent = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+-- Other basic settings
+vim.opt.number = true                        -- Show line numbers
+vim.opt.mouse = "a"                          -- Enable mouse support
+vim.opt.clipboard = "unnamedplus"
+
+--------------------------------------------------------------------------------
+-- Plugin Management with packer.nvim
+--------------------------------------------------------------------------------
+-- Auto-install packer.nvim if not installed
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({
+      "git",
+      "clone",
+      "--depth",
+      "1",
+      "https://github.com/wbthomason/packer.nvim",
+      install_path,
+    })
+    vim.cmd("packadd packer.nvim")
+    return true
+  end
+  return false
+end
+local packer_bootstrap = ensure_packer()
+
+-- Use packer to manage plugins
+require("packer").startup(function(use)
+  use "wbthomason/packer.nvim"
+
+  -- File Explorer (nvim-tree)
+  use {
+    "nvim-tree/nvim-tree.lua",
+    requires = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("nvim-tree").setup {
+        -- Your nvim-tree config can go here.
+      }
+    end,
+  }
+
+  -- Statusline (lualine)
+  use {
+    "nvim-lualine/lualine.nvim",
+    requires = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("lualine").setup {}
+    end,
+  }
+
+  -- Surround (nvim-surround)
+  use {
+    "kylechui/nvim-surround",
+    config = function()
+      require("nvim-surround").setup {}
+    end,
+  }
+
+  -- Auto-save (auto-save.nvim)
+  use {
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {
+        enabled = false,  -- Mimics your original auto-save setting (0)
+        execution_message = "",
+        events = {"InsertLeave", "TextChanged"},
+      }
+    end,
+  }
+
+  -- Auto pairs (nvim-autopairs)
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup {}
+    end,
+  }
+
+  -- Fuzzy Finder (Telescope)
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("telescope").setup {}
+    end,
+  }
+
+  -- LSP Configuration for Neovim
+  use "neovim/nvim-lspconfig"
+
+  -- Autocompletion (nvim-cmp + sources)
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "L3MON4D3/LuaSnip",
+    },
+    config = function()
+      local cmp = require("cmp")
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end,
+        },
+        mapping = cmp.mapping.preset.insert({
+          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<C-e>"] = cmp.mapping.abort(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        }),
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "buffer" },
+        }),
+      })
+    end,
+  }
+
+  -- LaTeX support with vimtex
+  use {
+    "lervag/vimtex",
+    config = function()
+      vim.g.tex_flavor = "latex"
+      vim.opt.sw = 2
+      vim.opt.iskeyword:append(":")
+      vim.g.Tex_FormatDependency_pdf = "dvi,pdf"
+      vim.g.Tex_MultipleCompileFormats = "pdf, aux"
+      vim.g.vimtex_fold_enabled = 0
+      vim.g.vimtex_quickfix_mode = 2
+      vim.g.vimtex_quickfix_open_on_warning = 1
+      vim.g.vimtex_toc_resize = 0
+      vim.g.vimtex_toc_hide_help = 1
+      vim.g.vimtex_indent_enabled = 1
+      vim.g.vimtex_latexmk_enabled = 1
+      vim.g.vimtex_latexmk_callback = 0
+      vim.g.vimtex_complete_recursive_bib = 0
+      vim.opt.clipboard = "unnamedplus"
+    end,
+  }
+
+  -- Optional: Repeat support (vim-repeat remains as a Vimscript plugin)
+  use "tpope/vim-repeat"
+
+  if packer_bootstrap then
+    require("packer").sync()
+  end
+end)
+
+--------------------------------------------------------------------------------
+-- Miscellaneous settings and commands
+--------------------------------------------------------------------------------
+
+-- 81st Column Highlighting
+vim.cmd("highlight ColorColumn ctermbg=magenta")
+vim.fn.matchadd("ColorColumn", "\\%81v", 100)
+
+-- Whitespace visualization (using similar Unicode symbols)
+vim.opt.listchars = { tab = "»»", trail = "·", nbsp = "~" }
+vim.opt.list = true
+
+-- Ruler and backspace settings
+vim.opt.ruler = true
+vim.opt.backspace = { "eol", "start", "indent" }
+vim.opt.whichwrap:append("<,>,h,l")
+
+--------------------------------------------------------------------------------
+-- Optional Autocommands / Additional settings
+--------------------------------------------------------------------------------
+
+-- (Example) On buffer enter, set the current directory to the file’s directory
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  callback = function()
+    local cwd = vim.fn.expand("%:p:h")
+    if cwd ~= "" then
+      vim.cmd("lcd " .. cwd)
+    end
+  end,
+})
+
+--------------------------------------------------------------------------------
+-- End of init.lua
+--------------------------------------------------------------------------------
